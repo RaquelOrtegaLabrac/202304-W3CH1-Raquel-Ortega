@@ -1,20 +1,21 @@
 /* eslint-disable max-params */
 export class Character {
-  constructor(name: string, house: string, age: number, status, speech) {
+  static series: string = 'Game of thrones';
+  name: string;
+  house: string;
+  age: number;
+  status: boolean;
+  speech: string;
+  constructor(name: string, house: string, age: number) {
     this.name = name;
     this.house = house;
     this.age = age;
-    this.status = status;
-    this.speech = speech;
-    this.series = 'Game of thrones';
-  }
-
-  belong() {
-    return this.series;
+    this.status = true;
+    this.speech = '';
   }
 
   kill() {
-    this.status = 'dead';
+    this.status = false;
     return this.status;
   }
 

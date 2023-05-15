@@ -2,6 +2,7 @@
 import { Character } from './characters.js';
 
 export class Advisor extends Character {
+  advisedCharacter: string;
   constructor(
     name: string,
     house: string,
