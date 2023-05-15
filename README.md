@@ -1,8 +1,17 @@
-# clases GOT
+# Week 3 - Challenge 1
 
-Tendrás que crear en JS una estructura de clases que refleje el siguiente modelo de datos:
+## GoT DOM
 
-En Juego de Tronos existen personajes. Todos esos personajes tienen la siguiente información: · Nombre · Familia a la que pertenece · Edad · Estado (vivo o muerto, aunque inicialmente todos están vivos)
+Tendrás que programar un interfaz de usuario para que refleje el siguiente modelo de datos.
+
+## Modelo de datos
+
+En Juego de Tronos existen personajes. Todos esos personajes tienen la siguiente información:
+
+- Nombre
+- Familia a la que pertenece
+- Edad
+- Estado (vivo o muerto, aunque inicialmente todos están vivos)
 
 Todos los personajes pueden realizar la acción de comunicar, pero cada tipo de personaje (no cada personaje) se comunica de un modo distinto. Nota: este método devuelve el string con la frase, no imprime por consola.
 
@@ -12,23 +21,46 @@ Todos los personajes pertenecen a la misma serie, "Juego de Tronos".
 
 Cada uno de esos personajes puede ser un rey, un luchador, un asesor, o un escudero.
 
-Un rey, además de la información que tiene por ser personaje, tiene la siguiente información: · Años de reinado · Cuando se comunica dice: "Vais a morir todos"
+Un rey, además de la información que tiene por ser personaje, tiene la siguiente información:
 
-Un luchador, además de la información que tiene por ser personaje, tiene la siguiente información: · Arma que usa · Destreza (un valor entre 0 y 10) · Cuando se comunica dice: "Primero pego y luego pregunto"
+- Años de reinado
+- Cuando se comunica dice: "Vais a morir todos"
 
-Un asesor, además de la información que tiene por ser personaje, tiene la siguiente información: · Personaje al que asesora (que puede ser rey, luchador, asesor o escudero) · Cuando se comunica dice: "No sé por qué, pero creo que voy a morir pronto"
+Un luchador, además de la información que tiene por ser personaje, tiene la siguiente información:
 
-Un escudero, además de la información que tiene por ser personaje, tiene la siguiente información: · Personaje al que sirve (que sólo puede ser luchador) · Grado de pelotismo (un valor entre 0 y 10) · Cuando se comunica dice: "Soy un loser"
+- Arma que usa
+- Destreza (un valor entre 0 y 10)
+- Cuando se comunica dice: "Primero pego y luego pregunto"
 
-Testea todo.
+Un asesor, además de la información que tiene por ser personaje, tiene la siguiente información:
 
-Una vez hecha toda la estructura, crea a Joffrey Baratheon (rey), Jaime Lannister (luchador), a Daenerys Targaryen (luchadora), a Tyrion Lannister (asesor de Daenerys) y a Bronn (escudero de Jaime).
+- Personaje al que asesora (que puede ser rey, luchador, asesor o escudero)
+- Cuando se comunica dice: "No sé por qué, pero creo que voy a morir pronto"
 
-Crea un array con todos los personajes.
-Haz una función que tenga como entrada dicho array y devuelva un array con los mensajes que comunican los luchadores.
+Un escudero, además de la información que tiene por ser personaje, tiene la siguiente información:
 
-Imprime por consola el nombre de la serie a la que pertenecen los personajes.
+- Personaje al que sirve (que sólo puede ser luchador)
+- Grado de servilismo (un valor entre 0 y 10)
+- Cuando se comunica dice: "Soy un loser"
 
-Recorre el array de mensajes e imprímelos por consola.
+## Conjunto de datos
 
-Mata a Jaime y a Tyrion.
+Crea los siguientes archivos JS y haz que funcionen como módulos mediante import y export:
+
+- Personaje.js, Rey.js, Luchador.js, Asesor.js, Escudero.js (mete dentro cada clase)
+- personajes.js (crea dentro un array con los personajes
+  - Joffrey Baratheon (rey),
+  - Jaime Lannister (luchador),
+  - Daenerys Targaryen (luchadora),
+  - Tyrion Lannister (asesor de Daenerys) y
+  - Bronn (escudero de Jaime).)
+- index.js (aquí va todo el resto del enunciado, y éste será el punto de entrada)
+
+## Creación del interface
+
+1. Haz que por cada personaje del array se muestre la ficha correspondiente en el navegador:
+   - En el elemento con clase `emoji` tiene que aparecer uno de estos emojis dependiendo del tipo de personaje: 👑 🗡 🎓 🛡
+   - Si el personaje está muerto, su foto debe aparecer cabeza abajo (haz el CSS necesario);
+   - En la lista con clase `metadata`, haz que sólo aparezcan los `li` correspondientes al personaje.
+2. Cuando el usuario haga clic en el botón "muere", tiene que cambiar el estado del personaje, y la interfaz debe reflejar el cambio.
+3. Cuando el usuario haga clic en el botón "habla", el elemento con clase `comunicaciones` debe aparecer con el texto y la imagen correspondientes. Haz que este elemento `comunicaciones` tenga la clase `on` durante 2 segundos y luego se le quite.
