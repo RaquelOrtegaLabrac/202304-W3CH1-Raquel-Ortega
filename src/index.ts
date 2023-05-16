@@ -1,12 +1,16 @@
 import { King } from './king.js';
 import { Advisor } from './advisor.js';
+import './style.css';
 
 const character1 = new King('Joffrey', 'Baratheon', 20, 1);
 
 const character4 = new Advisor('Tyrion', 'Lannister', 32, 'Daenerys');
 
-const allCharacters = [];
-allCharacters.push(character1, character4);
+export const allCharacters = (character1: object, character4: object) => {
+  let allCharactersList = [];
+
+  allCharactersList.push(character1, character4);
+};
 
 const messages: string[] = [];
 
